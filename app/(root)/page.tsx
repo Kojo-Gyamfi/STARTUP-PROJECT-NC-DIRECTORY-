@@ -1,4 +1,5 @@
 import StartupCard from "@/components/ui/StartupCard";
+import type { StartupCardType } from "@/components/ui/StartupCard";
 import SearchForm from "../../components/ui/SearchForm";
 
 export default async function Home({
@@ -8,9 +9,9 @@ export default async function Home({
 }) {
   const query = (await searchParams).query;
 
-  const posts = [
+  const posts: StartupCardType[] = [
     {
-      _createdAt: new Date(),
+      _createdAt: new Date().toISOString(),
       views: 55,
       author: { _id: 1, name: "Adrian" },
       _id: 1,
